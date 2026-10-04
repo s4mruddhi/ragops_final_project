@@ -1,0 +1,43 @@
+IT INCIDENT RESPONSE POLICY
+Version 2.1 | Effective Date: 1 January 2026 | Document ID: IT-INCIDENT-001
+Department: IT | Category: Cybersecurity
+
+1. PURPOSE
+This policy defines how Acme Corp identifies, classifies, responds to, and
+recovers from IT security incidents.
+
+2. INCIDENT CLASSIFICATION
+2.1 P1 — Critical: Active data breach, ransomware, complete system outage.
+    Response time: Immediate (within 15 minutes).
+2.2 P2 — High: Phishing compromise, malware detected, partial system outage.
+    Response time: Within 1 hour.
+2.3 P3 — Medium: Suspicious activity, policy violation, minor system issue.
+    Response time: Within 4 hours.
+2.4 P4 — Low: Informational, improvement suggestions.
+    Response time: Within 1 business day.
+
+3. REPORTING AN INCIDENT
+3.1 Employees must report incidents to security@acmecorp.internal immediately.
+3.2 For P1/P2 incidents, call the IT Security hotline: +91-98765-43210.
+3.3 Do not attempt to investigate or remediate incidents independently.
+
+4. INCIDENT RESPONSE STEPS
+4.1 Identification: IT Security confirms and classifies the incident.
+4.2 Containment: Affected systems are isolated to prevent spread.
+4.3 Eradication: Root cause is identified and eliminated.
+4.4 Recovery: Systems are restored and verified.
+4.5 Post-Incident Review: A report is produced within 5 working days for
+    P1 and P2 incidents.
+
+5. EMPLOYEE RESPONSIBILITIES
+5.1 Do not power off affected systems unless directed by IT Security.
+5.2 Preserve all evidence (logs, emails, screenshots) as instructed.
+5.3 Do not discuss the incident externally without authorisation from Legal.
+
+6. COMMUNICATION
+6.1 Internal communication about P1/P2 incidents is managed by IT Security
+    and the Communications team.
+6.2 Customer and regulatory notifications (if required) are managed by Legal.
+
+7. POLICY OWNER
+IT Security. Contact security@acmecorp.internal.

@@ -1,0 +1,13 @@
+{
+  "document_id": "HR-GRIEV-001",
+  "title": "Grievance Redressal Policy",
+  "department": "HR",
+  "category": "Employee Relations",
+  "version": "1.3",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\hr\\grievance_policy.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

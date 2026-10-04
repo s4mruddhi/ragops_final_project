@@ -1,0 +1,13 @@
+{
+  "document_id": "PROD-SUPP-001",
+  "title": "AcmeSuite Product Support Manual",
+  "department": "Product",
+  "category": "Support",
+  "version": "1.4",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\product\\product_support_manual.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

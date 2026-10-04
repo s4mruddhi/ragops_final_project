@@ -1,0 +1,13 @@
+{
+  "document_id": "PROD-SPEC-001",
+  "title": "AcmeSuite Product Specifications v2",
+  "department": "Product",
+  "category": "Product Information",
+  "version": "2.0",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\product\\product_specifications_v2.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

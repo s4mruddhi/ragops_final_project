@@ -1,0 +1,13 @@
+{
+  "document_id": "IT-PASS-001",
+  "title": "Password Policy",
+  "department": "IT",
+  "category": "Security",
+  "version": "4.2",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\it\\password_policy.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

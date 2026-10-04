@@ -1,0 +1,390 @@
+{
+  "uid": "ragops-main",
+  "title": "RAGOps - Service & Model Monitoring",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "10s",
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "tags": [
+    "ragops"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "title": "Request rate (req/s)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(rag_http_requests_total{path=\"/api/v1/query\"}[1m]))",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Error rate (5xx share)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 8,
+        "y": 0,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(rag_http_requests_total{status=~\"5..\"}[1m])) / clamp_min(sum(rate(rag_http_requests_total[1m])),1e-9)",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Inference latency p50 / p95 / p99 (s)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.5, sum by (le) (rate(rag_latency_seconds_bucket{phase=\"total\"}[1m])))",
+          "legendFormat": "p50"
+        },
+        {
+          "refId": "B",
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(rag_latency_seconds_bucket{phase=\"total\"}[1m])))",
+          "legendFormat": "p95"
+        },
+        {
+          "refId": "C",
+          "expr": "histogram_quantile(0.99, sum by (le) (rate(rag_latency_seconds_bucket{phase=\"total\"}[1m])))",
+          "legendFormat": "p99"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Fallback share (prediction distribution)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 7,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(rag_requests_total{is_fallback=\"true\"}[1m])) / clamp_min(sum(rate(rag_requests_total[1m])),1e-9)",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Mean groundedness score",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 8,
+        "y": 7,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(rag_groundedness_score_sum[2m]) / clamp_min(rate(rag_groundedness_score_count[2m]),1e-9)",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Mean top retrieval score",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 16,
+        "y": 7,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(rag_top_retrieval_score_sum[2m]) / clamp_min(rate(rag_top_retrieval_score_count[2m]),1e-9)",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Mean query length (words) - input drift",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 14,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(rag_query_length_words_sum[2m]) / clamp_min(rate(rag_query_length_words_count[2m]),1e-9)",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Feature PSI (threshold 0.2)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 8,
+        "y": 14,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rag_feature_psi",
+          "legendFormat": "{{feature}}"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Drift detected (1 = yes)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 16,
+        "y": 14,
+        "w": 8,
+        "h": 7
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rag_drift_detected",
+          "legendFormat": "{{feature}}"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Total requests",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 0,
+        "y": 21,
+        "w": 6,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rag_requests_total)",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Chunks indexed",
+      "type": "stat",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 6,
+        "y": 21,
+        "w": 6,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rag_chunks_indexed_total",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Mean user rating (labels)",
+      "type": "gauge",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 12,
+        "y": 21,
+        "w": 6,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rag_feedback_rating_mean",
+          "legendFormat": ""
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Citation correctness (mean)",
+      "type": "timeseries",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "gridPos": {
+        "x": 18,
+        "y": 21,
+        "w": 6,
+        "h": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit"
+        },
+        "overrides": []
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "rate(rag_citation_correctness_sum[2m]) / clamp_min(rate(rag_citation_correctness_count[2m]),1e-9)",
+          "legendFormat": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Optional Airflow UI (http://localhost:8080, admin password printed in the container logs).
+# Mounts the whole project so the DAG runs the same scripts as `dvc repro` / CI.
+services:
+  airflow:
+    image: apache/airflow:2.10.2-python3.10
+    container_name: ragops-airflow
+    command: bash -c "pip install -q -r /opt/ragops/requirements.txt && airflow standalone"
+    ports:
+      - "8080:8080"
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__DAGS_FOLDER=/opt/ragops/dags
+      - RAGOPS_HOME=/opt/ragops
+      - RAGOPS_PYTHON=python
+    volumes:
+      - .:/opt/ragops

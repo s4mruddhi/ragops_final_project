@@ -1,0 +1,143 @@
+# =============================================================================
+# dvc.yaml — DVC pipeline stages
+# Run with: dvc repro
+# =============================================================================
+
+stages:
+
+  # Stage 0: Ingest (manifest of exact dataset version)
+  ingest_documents:
+    cmd: python scripts/evaluation/ingest_documents.py
+    deps:
+      - scripts/evaluation/ingest_documents.py
+      - data/raw/
+    outs:
+      - data/processed/ingest_manifest.json
+
+  # ---------------------------------------------------------------------------
+  # Stage 1: Validate raw documents
+  # ---------------------------------------------------------------------------
+  validate_documents:
+    cmd: python scripts/evaluation/validate_documents.py
+    deps:
+      - scripts/evaluation/validate_documents.py
+      - data/raw/
+      - configs/pipeline.yaml
+    params:
+      - params.yaml:
+          - ingestion
+    outs:
+      - data/processed/validation_report.json
+
+  # ---------------------------------------------------------------------------
+  # Stage 2: Extract and clean text from validated documents
+  # ---------------------------------------------------------------------------
+  extract_and_clean:
+    cmd: python scripts/evaluation/extract_and_clean.py
+    deps:
+      - scripts/evaluation/extract_and_clean.py
+      - data/raw/
+      - data/processed/validation_report.json
+      - data/processed/ingest_manifest.json
+    params:
+      - params.yaml:
+          - chunking
+    outs:
+      - data/processed/extracted_texts.jsonl
+
+  # ---------------------------------------------------------------------------
+  # Stage 3: Chunk documents
+  # ---------------------------------------------------------------------------
+  chunk_documents:
+    cmd: python scripts/evaluation/chunk_documents.py
+    deps:
+      - scripts/evaluation/chunk_documents.py
+      - data/processed/extracted_texts.jsonl
+    params:
+      - params.yaml:
+          - chunking
+    outs:
+      - data/processed/chunks.jsonl
+
+  # ---------------------------------------------------------------------------
+  # Stage 4: Generate embeddings and build ChromaDB index
+  # ---------------------------------------------------------------------------
+  build_index:
+    cmd: python scripts/evaluation/build_index.py
+    deps:
+      - scripts/evaluation/build_index.py
+      - data/processed/chunks.jsonl
+    params:
+      - params.yaml:
+          - embedding
+          - vectorstore
+    outs:
+      - data/vectorstore/
+
+  # ---------------------------------------------------------------------------
+  # Stage 5: Run retrieval experiments
+  # ---------------------------------------------------------------------------
+  retrieval_experiments:
+    cmd: python scripts/evaluation/run_retrieval_experiments.py
+    deps:
+      - scripts/evaluation/run_retrieval_experiments.py
+      - data/vectorstore/
+      - data/evaluation/rag_questions.jsonl
+    params:
+      - params.yaml:
+          - retrieval
+          - evaluation
+    metrics:
+      - data/evaluation/reports/retrieval_metrics.json:
+          cache: false
+
+  # ---------------------------------------------------------------------------
+  # Stage 6: RAG evaluation
+  # ---------------------------------------------------------------------------
+  rag_evaluation:
+    cmd: python scripts/evaluation/run_rag_evaluation.py
+    deps:
+      - scripts/evaluation/run_rag_evaluation.py
+      - data/vectorstore/
+      - data/evaluation/rag_questions.jsonl
+      - prompts/
+    params:
+      - params.yaml:
+          - generation
+          - quality_gate
+          - seed
+    metrics:
+      - data/evaluation/reports/rag_metrics.json:
+          cache: false
+    outs:
+      - data/evaluation/reports/quality_gate.json:
+          cache: false
+
+  # ---------------------------------------------------------------------------
+  # Stage 7: Register champion in the MLflow Model Registry (only if gate passed)
+  # ---------------------------------------------------------------------------
+  register_model:
+    cmd: python scripts/evaluation/register_retriever_model.py
+    deps:
+      - scripts/evaluation/register_retriever_model.py
+      - data/evaluation/reports/quality_gate.json
+      - data/evaluation/reports/retrieval_metrics.json
+    outs:
+      - data/evaluation/reports/champion.json:
+          cache: false
+
+  # ---------------------------------------------------------------------------
+  # Stage 8: Drift simulation report
+  # ---------------------------------------------------------------------------
+  drift_check:
+    cmd: python scripts/monitoring/simulate_drift.py
+    deps:
+      - scripts/monitoring/simulate_drift.py
+      - app/monitoring/drift.py
+      - data/evaluation/reports/champion.json
+    params:
+      - params.yaml:
+          - drift
+    outs:
+      - data/monitoring/drift_report.json:
+          cache: false

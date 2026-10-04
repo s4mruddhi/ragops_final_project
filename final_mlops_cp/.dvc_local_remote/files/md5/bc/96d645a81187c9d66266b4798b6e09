@@ -1,0 +1,13 @@
+{
+  "document_id": "TRAVEL-BIZ-001",
+  "title": "Business Travel Guidelines",
+  "department": "Travel",
+  "category": "Travel Management",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\travel\\business_travel_guidelines.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

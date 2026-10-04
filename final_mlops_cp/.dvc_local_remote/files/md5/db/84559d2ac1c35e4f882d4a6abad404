@@ -1,0 +1,46 @@
+SOFTWARE INSTALLATION POLICY
+Version 1.5 | Effective Date: 1 January 2026 | Document ID: IT-SOFTW-001
+Department: IT | Category: Software Management
+
+1. PURPOSE
+To control the installation of software on company devices to maintain
+security, license compliance, and performance standards.
+
+2. APPROVED SOFTWARE
+2.1 The IT-approved software catalogue is maintained at:
+    software.acmecorp.internal/catalogue
+2.2 Software in the approved catalogue may be installed directly by employees
+    through the Self-Service Portal (Microsoft Intune Company Portal).
+2.3 Standard approved software includes: MS Office 365, VS Code, Slack,
+    Zoom, Chrome, Firefox, Docker Desktop, Python, Node.js (LTS).
+
+3. SOFTWARE NOT IN CATALOGUE
+3.1 Software not in the approved catalogue requires a Software Installation
+    Request submitted via the IT helpdesk portal.
+3.2 The request must include: software name, version, business justification,
+    and vendor license details.
+3.3 IT Security will evaluate the request within 5 working days.
+3.4 Approved software will be added to the catalogue and deployed remotely.
+
+4. PROHIBITED SOFTWARE
+4.1 The following categories of software are strictly prohibited:
+    - Hacking or penetration testing tools (unless role-approved)
+    - P2P or torrent clients
+    - Cryptocurrency mining software
+    - Games
+    - Remote desktop tools not approved by IT (e.g., TeamViewer personal)
+4.2 Unapproved software may be remotely removed without notice.
+
+5. LICENSING
+5.1 Employees must not install software using personal licenses on company
+    devices unless explicitly approved by IT.
+5.2 Software must not be used beyond the scope of its license agreement.
+
+6. OPEN SOURCE SOFTWARE
+6.1 Open source software with permissive licenses (MIT, Apache 2.0) may be
+    used for business purposes.
+6.2 Open source software with GPL/AGPL licenses must be cleared with the
+    Legal team before use in any company product or service.
+
+7. POLICY OWNER
+IT Software Management. Contact helpdesk@acmecorp.internal.

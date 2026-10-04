@@ -1,0 +1,9 @@
+[core]
+    remote = localremote
+['remote "localremote"']
+    # relative to this file -> works on every machine and in CI (no C:\Users\... paths)
+    url = ../.dvc_local_remote
+['remote "s3remote"']
+    # cloud extension: dvc remote modify s3remote url s3://<your-bucket>/dvc ; dvc push -r s3remote
+    url = s3://BUCKET_PLACEHOLDER/dvc
+    region = us-east-1

@@ -1,0 +1,13 @@
+{
+  "document_id": "HR-ATTEND-001",
+  "title": "Attendance Policy",
+  "department": "HR",
+  "category": "Attendance",
+  "version": "2.2",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\hr\\attendance_policy.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

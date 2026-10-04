@@ -1,0 +1,8 @@
+I was unable to find sufficient information in the verified organizational documents to answer your question confidently.
+
+The retrieved context did not contain a clear, grounded answer to:
+"{question}"
+
+Please contact your HR or IT department directly, or consult the official policy portal for authoritative guidance.
+
+Note: This response was generated because the system's groundedness check indicated the retrieved context was insufficient to support a reliable answer.

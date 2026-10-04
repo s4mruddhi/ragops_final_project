@@ -1,0 +1,67 @@
+ACMESUITE TROUBLESHOOTING GUIDE
+Version 2.2 | Effective Date: 1 January 2026 | Document ID: PROD-TRBL-001
+Department: Product | Category: Support
+
+1. PURPOSE
+Step-by-step troubleshooting for the most frequently reported AcmeSuite issues.
+
+2. LOGIN AND AUTHENTICATION ISSUES
+
+Issue: "Invalid credentials" error
+- Verify Caps Lock is off.
+- Reset password at app.acmesuite.com/forgot-password.
+- If SSO is configured, contact your company IT admin.
+
+Issue: MFA code not accepted
+- Ensure your authenticator app time is synced (Settings → Sync).
+- Use a backup code if available.
+- Contact support@acmesuite.com for MFA reset.
+
+Issue: Account locked
+- Accounts lock after 5 failed attempts.
+- Contact support@acmesuite.com or your AcmeSuite admin.
+
+3. PERFORMANCE ISSUES
+
+Issue: Pages loading slowly
+- Check internet speed (minimum 10 Mbps required).
+- Disable browser extensions that may interfere.
+- Try a different browser or incognito mode.
+- Clear browser cache: Ctrl+Shift+Del (Windows) or Cmd+Shift+Del (Mac).
+
+Issue: Dashboard tiles not refreshing
+- Click the refresh button on the dashboard.
+- Check if the data source integration (e.g., CRM) is connected in Settings.
+
+4. DATA AND REPORTS
+
+Issue: Report shows incorrect totals
+- Verify the date range filter is correct.
+- Check if all relevant records are in "Active" status.
+- Ensure all team members' data is included in the report scope.
+
+Issue: Data export is empty
+- Confirm the filter criteria return results in the table view first.
+- Exports > 100,000 rows are background jobs — check "My Downloads" in 15 minutes.
+
+5. INTEGRATION ISSUES
+
+Issue: Slack integration not posting notifications
+- Go to Settings → Integrations → Slack → Re-authenticate.
+- Confirm the Slack bot has been added to the correct channel.
+
+Issue: Google Calendar sync not working
+- Disconnect and reconnect the integration.
+- Ensure "Calendar" permission is granted in Google account settings.
+
+6. BILLING AND SUBSCRIPTION
+
+Issue: "Subscription expired" message
+- Contact your AcmeSuite account manager.
+- Internal employees: contact product@acmecorp.internal.
+
+7. CONTACTING SUPPORT
+If these steps do not resolve the issue:
+- Email: support@acmesuite.com
+- Include: screenshot, steps to reproduce, browser/OS version, account name.
+- Enterprise P1 hotline: +91-1800-XXX-YYYY.

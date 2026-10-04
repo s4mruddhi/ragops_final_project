@@ -1,0 +1,48 @@
+LAPTOP POLICY
+Version 2.0 | Effective Date: 1 January 2026 | Document ID: IT-LAPTOP-001
+Department: IT | Category: Asset Management
+
+1. PURPOSE
+This policy governs the issuance, use, care, and return of company-issued
+laptop computers at Acme Corp.
+
+2. ISSUANCE
+2.1 Every permanent employee is issued a company laptop on their first day
+    as per the IT Asset Request submitted by HR during onboarding.
+2.2 Laptops are issued based on role category: Standard (8GB/256GB SSD) or
+    Developer/Power User (16GB/512GB SSD).
+2.3 The laptop remains the property of Acme Corp at all times.
+
+3. ACCEPTABLE USE
+3.1 The laptop must be used primarily for business purposes.
+3.2 Limited personal use is permitted provided it does not affect performance,
+    security, or company reputation.
+3.3 Installation of unlicensed or pirated software is strictly prohibited.
+3.4 Games, cryptocurrency mining software, and P2P file-sharing applications
+    are not permitted on company laptops.
+
+4. SECURITY REQUIREMENTS
+4.1 Employees must not disable the endpoint security agent (CrowdStrike Falcon).
+4.2 Full-disk encryption (BitLocker/FileVault) must remain enabled at all times.
+4.3 The laptop must be locked (Win+L or Cmd+Ctrl+Q) whenever left unattended.
+4.4 Laptops must not be left visible in vehicles or public spaces.
+
+5. DAMAGE AND THEFT
+5.1 Accidental damage must be reported to IT within 48 hours.
+5.2 Theft must be reported to IT and local authorities within 24 hours.
+5.3 Employees may be held financially responsible for damage caused by
+    negligence, up to the depreciated value of the device.
+
+6. RETURN
+6.1 Laptops must be returned to IT within 2 working days of resignation
+    acceptance, termination, or role change.
+6.2 Personal data should be removed by the employee before return. The IT
+    team will perform a full wipe after return.
+
+7. UPGRADES
+7.1 Laptops are refreshed on a 4-year cycle.
+7.2 Requests for early upgrade must be justified to IT and approved by the
+    Department Head.
+
+8. POLICY OWNER
+IT Asset Management. Contact it-assets@acmecorp.internal.

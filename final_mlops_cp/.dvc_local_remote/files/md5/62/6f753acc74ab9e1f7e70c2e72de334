@@ -1,0 +1,42 @@
+MOBILE DEVICE POLICY
+Version 1.2 | Effective Date: 1 January 2026 | Document ID: IT-MOBILE-001
+Department: IT | Category: Asset Management
+
+1. PURPOSE
+This policy governs the use of mobile devices (smartphones and tablets) to
+access Acme Corp corporate resources, whether company-issued or personal (BYOD).
+
+2. COMPANY-ISSUED DEVICES
+2.1 Certain roles (field sales, executives, IT on-call) are provided with
+    company mobile phones.
+2.2 Company phones are managed via Microsoft Intune MDM.
+2.3 The acceptable use rules from IT-LAPTOP-001 apply to mobile devices.
+
+3. BRING YOUR OWN DEVICE (BYOD)
+3.1 Employees may use personal smartphones to access corporate email, Slack,
+    and the HR portal.
+3.2 Enrollment in Microsoft Intune is required to access corporate resources
+    on personal devices.
+3.3 Intune manages only the corporate data container — personal apps and data
+    are not monitored or controlled by the company.
+
+4. SECURITY REQUIREMENTS
+4.1 All devices (company and BYOD) must have a screen lock enabled with a
+    minimum 6-digit PIN, fingerprint, or face recognition.
+4.2 Devices must run a supported OS version:
+    - iOS 16 or later
+    - Android 12 or later
+4.3 Jailbroken or rooted devices may not access corporate resources.
+
+5. LOST OR STOLEN DEVICES
+5.1 Report a lost or stolen device to IT within 2 hours of discovery.
+5.2 IT will remotely wipe the corporate container on the device.
+5.3 For company-issued devices, a full remote wipe may be performed.
+
+6. DATA ON MOBILE DEVICES
+6.1 Confidential company data must not be stored locally on mobile devices
+    beyond the automatic cache managed by corporate apps.
+6.2 Screenshots of confidential data on mobile are prohibited.
+
+7. POLICY OWNER
+IT Security. Contact security@acmecorp.internal.

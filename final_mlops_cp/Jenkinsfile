@@ -1,0 +1,124 @@
+pipeline {
+    agent any
+
+    environment {
+        PYTHONHASHSEED = '42'
+        ANONYMIZED_TELEMETRY = 'False'
+        ALLOW_TEST_MOCK = '1'
+        LLM_PROVIDER = 'ollama'
+        LLM_MODEL = 'llama3.2:latest'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh '''
+                            python3 -m pip install --upgrade pip
+                            pip3 install torch --index-url https://download.pytorch.org/whl/cpu
+                            pip3 install -r requirements.txt
+                        '''
+                    } else {
+                        bat '''
+                            python -m pip install --upgrade pip
+                            pip install torch --index-url https://download.pytorch.org/whl/cpu
+                            pip install -r requirements.txt
+                        '''
+                    }
+                }
+            }
+        }
+
+        stage('DVC Data Pull') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'dvc pull data/raw.dvc'
+                    } else {
+                        bat 'dvc pull data/raw.dvc'
+                    }
+                }
+            }
+        }
+
+        stage('Lint & Static Analysis') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'flake8 app scripts dags tests --count --select=E9,F63,F7,F82 --show-source --statistics || true'
+                    } else {
+                        bat 'flake8 app scripts dags tests --count --select=E9,F63,F7,F82 --show-source --statistics || exit 0'
+                    }
+                }
+            }
+        }
+
+        stage('Unit & Integration Tests') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'pytest tests/ -q --cov=app --cov-report=term-missing'
+                    } else {
+                        bat 'pytest tests/ -q --cov=app --cov-report=term-missing'
+                    }
+                }
+            }
+        }
+
+        stage('Execute RAGOps Pipeline') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'python3 scripts/run_dag_pipeline.py'
+                    } else {
+                        bat 'python scripts/run_dag_pipeline.py'
+                    }
+                }
+            }
+        }
+
+        stage('Quality Gate Verification') {
+            steps {
+                script {
+                    def checkScript = 'import json, sys; g = json.load(open("data/evaluation/reports/quality_gate.json")); sys.exit(0 if g.get("passed", False) else 1)'
+                    if (isUnix()) {
+                        sh "python3 -c '${checkScript}'"
+                    } else {
+                        bat "python -c \"${checkScript}\""
+                    }
+                }
+            }
+        }
+
+        stage('Build Docker Artifact') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'docker build -t ragops-assistant:latest .'
+                    } else {
+                        bat 'docker build -t ragops-assistant:latest .'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'data/evaluation/reports/*.json', allowEmptyArchive: true
+        }
+        success {
+            echo 'SUCCESS: RAGOps CI/CD Pipeline and Quality Gates passed!'
+        }
+        failure {
+            echo 'FAILED: Quality Gate or tests failed. Deployment aborted.'
+        }
+    }
+}

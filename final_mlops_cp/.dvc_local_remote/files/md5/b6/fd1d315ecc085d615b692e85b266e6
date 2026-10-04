@@ -1,0 +1,43 @@
+PASSWORD POLICY
+Version 4.2 | Effective Date: 1 January 2026 | Document ID: IT-PASS-001
+Department: IT | Category: Security
+
+1. PURPOSE
+To define requirements for creating, managing, and protecting passwords
+used to access Acme Corp systems and services.
+
+2. PASSWORD REQUIREMENTS
+2.1 Minimum length: 12 characters.
+2.2 Must include at least one uppercase letter, one lowercase letter,
+    one numeric digit, and one special character (!@#$%^&*).
+2.3 Passwords must not contain the user's name, username, or common dictionary words.
+2.4 The last 10 passwords cannot be reused.
+
+3. PASSWORD ROTATION
+3.1 Corporate account passwords must be changed every 90 days.
+3.2 The system will prompt users 14 days before expiry.
+3.3 Service account passwords must be rotated every 180 days.
+
+4. MULTI-FACTOR AUTHENTICATION (MFA)
+4.1 MFA is mandatory for all corporate accounts and all remote access.
+4.2 Approved MFA methods: Microsoft Authenticator, hardware security keys.
+4.3 SMS-based OTP is not an approved MFA method due to SIM-swap vulnerabilities.
+
+5. PASSWORD SHARING
+5.1 Sharing passwords is strictly prohibited under any circumstances.
+5.2 If a shared account is operationally required, it must be managed through
+    the Privileged Access Management (PAM) system. Contact IT for setup.
+
+6. STORING PASSWORDS
+6.1 Passwords must not be written on paper, stored in plain text files,
+    or saved in browser password managers on shared devices.
+6.2 The company-approved password manager (Bitwarden Enterprise) must be
+    used for storing business passwords.
+
+7. COMPROMISED PASSWORDS
+7.1 If you suspect your password has been compromised, change it immediately
+    and notify the IT Security team at security@acmecorp.internal.
+7.2 The IT team may force a password reset if suspicious activity is detected.
+
+8. POLICY OWNER
+IT Security. Contact security@acmecorp.internal.

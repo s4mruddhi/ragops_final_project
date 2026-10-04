@@ -1,0 +1,80 @@
+{
+  "retriever": "hybrid",
+  "reference_queries": 32,
+  "window_size": 60,
+  "thresholds": {
+    "psi_threshold": 0.2,
+    "ks_alpha": 0.05,
+    "min_samples": 30
+  },
+  "no_drift_window": {
+    "features": {
+      "query_length": {
+        "psi": 0.0088,
+        "ks_p": 1.0,
+        "drift": false,
+        "ref_mean": 12.8438,
+        "cur_mean": 12.8833
+      },
+      "top_retrieval_score": {
+        "psi": 0.0447,
+        "ks_p": 0.962983,
+        "drift": false,
+        "ref_mean": 0.0159,
+        "cur_mean": 0.0162
+      },
+      "groundedness_score": {
+        "psi": 0.0001,
+        "ks_p": 1.0,
+        "drift": false,
+        "ref_mean": 0.9688,
+        "cur_mean": 0.9667
+      },
+      "fallback": {
+        "psi": 0.0001,
+        "ks_p": 1.0,
+        "drift": false,
+        "ref_mean": 0.0312,
+        "cur_mean": 0.0333
+      }
+    },
+    "drift_detected": false,
+    "n_reference": 32,
+    "n_current": 60
+  },
+  "drifted_window": {
+    "features": {
+      "query_length": {
+        "psi": 0.2507,
+        "ks_p": 0.014349,
+        "drift": true,
+        "ref_mean": 12.8438,
+        "cur_mean": 23.75
+      },
+      "top_retrieval_score": {
+        "psi": 0.8076,
+        "ks_p": 0.001754,
+        "drift": true,
+        "ref_mean": 0.0159,
+        "cur_mean": 0.0142
+      },
+      "groundedness_score": {
+        "psi": 6.3603,
+        "ks_p": 0.0,
+        "drift": true,
+        "ref_mean": 0.9688,
+        "cur_mean": 0.225
+      },
+      "fallback": {
+        "psi": 4.8921,
+        "ks_p": 0.0,
+        "drift": true,
+        "ref_mean": 0.0312,
+        "cur_mean": 0.9
+      }
+    },
+    "drift_detected": true,
+    "n_reference": 32,
+    "n_current": 60
+  }
+}

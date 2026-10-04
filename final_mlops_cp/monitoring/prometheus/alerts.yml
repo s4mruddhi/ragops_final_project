@@ -1,0 +1,23 @@
+groups:
+  - name: ragops
+    rules:
+      - alert: HighErrorRate
+        expr: sum(rate(rag_http_requests_total{status=~"5.."}[5m])) / sum(rate(rag_http_requests_total[5m])) > 0.05
+        for: 2m
+        labels: {severity: critical}
+        annotations: {summary: "More than 5% of requests are failing"}
+      - alert: HighP95Latency
+        expr: histogram_quantile(0.95, sum by (le) (rate(rag_latency_seconds_bucket{phase="total"}[5m]))) > 2
+        for: 5m
+        labels: {severity: warning}
+        annotations: {summary: "p95 end-to-end latency above 2s"}
+      - alert: InputDriftDetected
+        expr: max(rag_feature_psi) > 0.2
+        for: 1m
+        labels: {severity: warning}
+        annotations: {summary: "PSI > 0.2 on a monitored feature - consider re-ingest / retraining DAG run"}
+      - alert: HighFallbackRate
+        expr: sum(rate(rag_requests_total{is_fallback="true"}[10m])) / sum(rate(rag_requests_total[10m])) > 0.3
+        for: 5m
+        labels: {severity: warning}
+        annotations: {summary: "More than 30% of answers are fallbacks"}

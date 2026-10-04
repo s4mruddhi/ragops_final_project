@@ -1,0 +1,50 @@
+CYBERSECURITY POLICY
+Version 3.0 | Effective Date: 1 January 2026 | Document ID: IT-CYBER-001
+Department: IT | Category: Cybersecurity
+
+1. PURPOSE
+To establish a security baseline that protects Acme Corp's information assets,
+systems, and data from unauthorised access, disruption, or loss.
+
+2. ACCEPTABLE USE
+2.1 Company systems must be used only for authorised business activities.
+2.2 Accessing inappropriate, illegal, or offensive content using company
+    networks or devices is prohibited.
+
+3. PHISHING AND SOCIAL ENGINEERING
+3.1 Employees must not click links or open attachments from unknown or
+    suspicious senders.
+3.2 If a phishing email is received, report it immediately to
+    security@acmecorp.internal using the Phish Alert Button in Outlook.
+3.3 IT will never ask for your password via email or phone.
+
+4. DATA CLASSIFICATION
+4.1 Company data is classified as: Public, Internal, Confidential, Restricted.
+4.2 Employees must handle data according to its classification label.
+4.3 Restricted data must be encrypted at rest and in transit at all times.
+
+5. INCIDENT REPORTING
+5.1 Any suspected security incident (malware, data breach, lost device) must
+    be reported to security@acmecorp.internal within 1 hour of detection.
+5.2 Failure to report a security incident is itself a policy violation.
+
+6. PHYSICAL SECURITY
+6.1 Employees must not tailgate or allow unauthorised individuals to enter
+    secured office areas.
+6.2 Visitors must be registered at reception and escorted at all times.
+
+7. REMOVABLE MEDIA
+7.1 The use of personal USB drives on company laptops is prohibited.
+7.2 Company-issued encrypted USB drives may be used with manager approval.
+
+8. CLOUD STORAGE
+8.1 Company data must not be stored in personal cloud accounts (Google Drive,
+    Dropbox personal, iCloud, etc.).
+8.2 Approved cloud storage: Microsoft SharePoint, OneDrive for Business.
+
+9. PATCH MANAGEMENT
+9.1 Employees must not defer OS or application security patches.
+9.2 Critical patches must be applied within 48 hours of notification.
+
+10. POLICY OWNER
+IT Security. Contact security@acmecorp.internal. Report incidents immediately.

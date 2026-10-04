@@ -1,0 +1,13 @@
+{
+  "document_id": "TRAVEL-POL-001",
+  "title": "Corporate Travel Policy",
+  "department": "Travel",
+  "category": "Travel Management",
+  "version": "3.2",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\travel\\corporate_travel_policy.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

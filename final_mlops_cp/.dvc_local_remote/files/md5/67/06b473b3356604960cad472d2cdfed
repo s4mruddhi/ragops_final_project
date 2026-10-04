@@ -1,0 +1,222 @@
+[
+  {
+    "document_id": "HR-LEAVE-001",
+    "title": "Annual Leave Policy",
+    "department": "HR",
+    "category": "Leave Management",
+    "version": "3.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/hr/annual_leave_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "HR-ATTEND-001",
+    "title": "Attendance Policy",
+    "department": "HR",
+    "category": "Attendance",
+    "version": "2.2",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/hr/attendance_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "HR-WFH-001",
+    "title": "Work From Home Policy",
+    "department": "HR",
+    "category": "Remote Work",
+    "version": "2.1",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/hr/work_from_home_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "HR-BENEFITS-001",
+    "title": "Employee Benefits Guide",
+    "department": "HR",
+    "category": "Benefits",
+    "version": "4.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/hr/employee_benefits_guide.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "HR-REIMB-001",
+    "title": "Employee Reimbursement Policy",
+    "department": "HR",
+    "category": "Reimbursement",
+    "version": "2.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/hr/reimbursement_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "HR-CONDUCT-001",
+    "title": "Code of Conduct",
+    "department": "HR",
+    "category": "Compliance",
+    "version": "5.1",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/hr/code_of_conduct.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "HR-GRIEV-001",
+    "title": "Grievance Redressal Policy",
+    "department": "HR",
+    "category": "Employee Relations",
+    "version": "1.3",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/hr/grievance_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-VPN-001",
+    "title": "VPN Setup Manual",
+    "department": "IT",
+    "category": "Network Access",
+    "version": "3.1",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/vpn_setup_manual.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-PASS-001",
+    "title": "Password Policy",
+    "department": "IT",
+    "category": "Security",
+    "version": "4.2",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/password_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-LAPTOP-001",
+    "title": "Laptop Policy",
+    "department": "IT",
+    "category": "Asset Management",
+    "version": "2.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/laptop_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-EMAIL-001",
+    "title": "Email Configuration Guide",
+    "department": "IT",
+    "category": "Communication Tools",
+    "version": "2.3",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/email_configuration_guide.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-SOFTW-001",
+    "title": "Software Installation Policy",
+    "department": "IT",
+    "category": "Software Management",
+    "version": "1.5",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/software_installation_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-CYBER-001",
+    "title": "Cybersecurity Policy",
+    "department": "IT",
+    "category": "Cybersecurity",
+    "version": "3.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/cybersecurity_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-MOBILE-001",
+    "title": "Mobile Device Policy",
+    "department": "IT",
+    "category": "Asset Management",
+    "version": "1.2",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/mobile_device_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-INCIDENT-001",
+    "title": "IT Incident Response Policy",
+    "department": "IT",
+    "category": "Cybersecurity",
+    "version": "2.1",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/incident_response_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "TRAVEL-POL-001",
+    "title": "Corporate Travel Policy",
+    "department": "Travel",
+    "category": "Travel Management",
+    "version": "3.2",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/travel/corporate_travel_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "TRAVEL-REIMB-001",
+    "title": "Travel Reimbursement Policy",
+    "department": "Travel",
+    "category": "Travel Reimbursement",
+    "version": "2.1",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/travel/travel_reimbursement_policy.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "TRAVEL-BIZ-001",
+    "title": "Business Travel Guidelines",
+    "department": "Travel",
+    "category": "Travel Management",
+    "version": "1.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/travel/business_travel_guidelines.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "PROD-SPEC-001",
+    "title": "AcmeSuite Product Specifications v2",
+    "department": "Product",
+    "category": "Product Information",
+    "version": "2.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/product/product_specifications_v2.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "PROD-SUPP-001",
+    "title": "AcmeSuite Product Support Manual",
+    "department": "Product",
+    "category": "Support",
+    "version": "1.4",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/product/product_support_manual.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "PROD-TRBL-001",
+    "title": "AcmeSuite Troubleshooting Guide",
+    "department": "Product",
+    "category": "Support",
+    "version": "2.2",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/product/troubleshooting_guide.txt",
+    "dataset_version": "v1"
+  },
+  {
+    "document_id": "IT-ADVERSARIAL-TEST",
+    "title": "Adversarial Test Document \u2014 Prompt Injection Simulation",
+    "department": "IT",
+    "category": "Security Testing",
+    "version": "1.0",
+    "effective_date": "2026-01-01",
+    "file_path": "data/raw/it/adversarial_test_doc.txt",
+    "dataset_version": "v1"
+  }
+]

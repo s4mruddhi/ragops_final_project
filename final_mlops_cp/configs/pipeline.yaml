@@ -1,0 +1,62 @@
+# =============================================================================
+# configs/pipeline.yaml  — Airflow pipeline configuration
+# =============================================================================
+
+dag:
+  dag_id: ingest_documents_pipeline
+  description: "End-to-end RAGOps document ingestion, embedding, and evaluation pipeline"
+  schedule_interval: "@weekly"   # or null for manual-only
+  start_date: "2026-01-01"
+  catchup: false
+  max_active_runs: 1
+  tags: ["ragops", "ingestion", "embedding"]
+
+tasks:
+  ingest_documents:
+    retries: 2
+    retry_delay_seconds: 30
+
+  validate_documents:
+    retries: 1
+    retry_delay_seconds: 10
+    fail_on_invalid: false        # log invalids but continue with valid docs
+    save_validation_report: true
+    report_path: "data/processed/validation_report.json"
+
+  extract_text:
+    retries: 2
+    retry_delay_seconds: 30
+
+  clean_text:
+    retries: 1
+    retry_delay_seconds: 10
+
+  chunk_documents:
+    retries: 1
+    retry_delay_seconds: 10
+
+  generate_embeddings:
+    retries: 2
+    retry_delay_seconds: 60
+    batch_size: 32
+
+  update_vector_database:
+    retries: 2
+    retry_delay_seconds: 30
+    recreate_collection: false    # set true to force full reindex
+
+  evaluate_retrieval:
+    retries: 1
+    retry_delay_seconds: 30
+
+  evaluate_rag:
+    retries: 1
+    retry_delay_seconds: 30
+
+  quality_gate:
+    retries: 0                    # no retry — gate is deterministic
+    fail_pipeline_on_gate_fail: true
+
+  register_version:
+    retries: 1
+    retry_delay_seconds: 10

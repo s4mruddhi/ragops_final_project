@@ -1,0 +1,13 @@
+{
+  "document_id": "IT-SOFTW-001",
+  "title": "Software Installation Policy",
+  "department": "IT",
+  "category": "Software Management",
+  "version": "1.5",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\it\\software_installation_policy.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

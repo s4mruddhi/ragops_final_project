@@ -1,0 +1,13 @@
+{
+  "document_id": "IT-ADVERSARIAL-TEST",
+  "title": "Adversarial Test Document \u2014 Prompt Injection Simulation",
+  "department": "IT",
+  "category": "Security Testing",
+  "version": "1.0",
+  "effective_date": "2026-01-01",
+  "source": "security_test",
+  "access_level": "admin",
+  "file_path": "data\\raw\\it\\adversarial_test_doc.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

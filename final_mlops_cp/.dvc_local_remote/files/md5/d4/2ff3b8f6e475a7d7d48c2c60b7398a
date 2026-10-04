@@ -1,0 +1,41 @@
+ACMESUITE PRODUCT SUPPORT MANUAL
+Version 1.4 | Effective Date: 1 January 2026 | Document ID: PROD-SUPP-001
+Department: Product | Category: Support
+
+1. PURPOSE
+This manual describes the support processes, tiers, SLAs, and escalation
+paths for AcmeSuite customers and internal support staff.
+
+2. SUPPORT TIERS
+2.1 Tier 1 (L1): Customer-facing support. Handles common queries, password
+    resets, navigation help. Resolution target: 80% within 4 hours.
+2.2 Tier 2 (L2): Technical support. Handles complex configuration, integration
+    issues, data queries. Resolution target: 2 business days.
+2.3 Tier 3 (L3): Engineering escalation. Product bugs, platform outages,
+    data corruption. Resolution target: per incident SLA.
+
+3. SUPPORT CHANNELS
+3.1 Email: support@acmesuite.com (24x7, response within 2 hours for Enterprise).
+3.2 Live Chat: Available at app.acmesuite.com (Monday–Friday, 9AM–6PM IST).
+3.3 Phone: +91-1800-XXX-YYYY (Enterprise customers only, 24x7).
+3.4 Help Centre: help.acmesuite.com (self-service articles and FAQs).
+
+4. ESCALATION PROCESS
+4.1 L1 escalates to L2 if issue is unresolved within 4 hours.
+4.2 L2 escalates to L3 if issue requires code-level investigation.
+4.3 Enterprise P1 issues are escalated to the Incident Manager immediately.
+
+5. COMMON ISSUES AND QUICK RESOLUTIONS
+5.1 "Cannot log in" — Reset password at app.acmesuite.com/forgot-password.
+5.2 "Dashboard not loading" — Clear browser cache, try incognito mode.
+5.3 "Payroll calculation incorrect" — Check pay period settings in HR → Payroll Config.
+5.4 "Integration stopped working" — Re-authenticate the integration in Settings → Integrations.
+5.5 "Data export failing" — Check file size; exports > 100,000 rows require background processing.
+
+6. KNOWN LIMITATIONS
+6.1 The Finance module does not support real-time bank reconciliation.
+6.2 CRM email templates do not support HTML embedding (planned for Q2 2026).
+6.3 Gantt chart exports are limited to 500 tasks.
+
+7. POLICY OWNER
+Product Support Team. Contact support@acmesuite.com.

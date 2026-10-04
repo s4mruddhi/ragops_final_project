@@ -1,0 +1,46 @@
+EMAIL CONFIGURATION GUIDE
+Version 2.3 | Effective Date: 1 January 2026 | Document ID: IT-EMAIL-001
+Department: IT | Category: Communication Tools
+
+1. PURPOSE
+This guide provides instructions for configuring the corporate Microsoft 365
+email account on Outlook and mobile devices.
+
+2. OUTLOOK — WINDOWS / MAC
+2.1 Open Microsoft Outlook (pre-installed on company laptops via M365).
+2.2 Click File → Add Account.
+2.3 Enter your corporate email address (firstname.lastname@acmecorp.com).
+2.4 Select "Microsoft 365" as the account type.
+2.5 Sign in with your SSO credentials. MFA prompt will appear — approve it.
+2.6 Outlook will auto-configure Exchange settings.
+
+3. MOBILE — iOS
+3.1 Download Microsoft Outlook from the App Store.
+3.2 Add your corporate email account.
+3.3 Sign in with SSO credentials and approve MFA.
+3.4 Intune MDM profile will be installed automatically. This is required
+    to access corporate email on personal devices.
+
+4. MOBILE — ANDROID
+4.1 Download Microsoft Outlook from Google Play Store.
+4.2 Follow the same steps as iOS above.
+4.3 Company data on mobile is isolated in a managed container via Intune.
+
+5. EMAIL SIGNATURE
+5.1 All employees must use the standardised email signature available at:
+    templates.acmecorp.internal/email-signature
+5.2 The signature must include: Name, Designation, Department, Phone, and
+    the company logo.
+
+6. EMAIL USAGE RULES
+6.1 Corporate email must not be used for personal business or non-work-related
+    mass communications.
+6.2 Emails containing confidential data must be encrypted using S/MIME.
+6.3 Employees must not forward confidential emails to personal email accounts.
+
+7. MAILBOX QUOTA
+Individual mailbox quota is 50 GB. Shared mailboxes are 100 GB.
+Archives are enabled automatically via Microsoft 365 archiving.
+
+8. POLICY OWNER
+IT Operations. Contact it-ops@acmecorp.internal.

@@ -1,0 +1,35 @@
+# =============================================================================
+# configs/monitoring.yaml  — Prometheus + Grafana + drift configuration
+# =============================================================================
+
+prometheus:
+  port: 9090
+  scrape_interval: 15s
+  targets:
+    - "ragops-api:8000"
+
+grafana:
+  port: 3000
+  admin_user: admin
+  # password from env: GRAFANA_PASSWORD
+
+drift:
+  enabled: true
+  run_interval_hours: 24
+  reference_window_days: 7
+  current_window_days: 1
+  min_samples_required: 30
+  psi_threshold: 0.2
+  ks_p_value_threshold: 0.05
+  features_to_monitor:
+    - query_length
+    - retrieval_score
+    - groundedness_score
+    - retrieved_doc_ids
+
+cloudwatch:
+  enabled: false             # set true in AWS mode
+  log_group: /ragops/api
+  log_stream: application
+  region: us-east-1
+  flush_interval_seconds: 5

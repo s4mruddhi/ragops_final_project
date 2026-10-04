@@ -1,0 +1,13 @@
+{
+  "document_id": "HR-BENEFITS-001",
+  "title": "Employee Benefits Guide",
+  "department": "HR",
+  "category": "Benefits",
+  "version": "4.0",
+  "effective_date": "2026-01-01",
+  "source": "internal_policy",
+  "access_level": "employee",
+  "file_path": "data\\raw\\hr\\employee_benefits_guide.txt",
+  "file_format": "txt",
+  "dataset_version": "v1"
+}

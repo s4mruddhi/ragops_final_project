@@ -1,0 +1,48 @@
+VPN SETUP MANUAL
+Version 3.1 | Effective Date: 1 January 2026 | Document ID: IT-VPN-001
+Department: IT | Category: Network Access
+
+1. PURPOSE
+This manual provides step-by-step instructions for installing and connecting
+to the Acme Corp corporate VPN using Cisco AnyConnect Secure Mobility Client.
+
+2. WHO REQUIRES VPN
+2.1 All employees working remotely must connect to the VPN before accessing
+    any internal company systems, applications, or shared drives.
+2.2 VPN is mandatory when using public or unsecured Wi-Fi networks.
+2.3 VPN is optional when in the office, as internal traffic is secured.
+
+3. INSTALLATION — WINDOWS
+3.1 Navigate to software.acmecorp.internal in a browser.
+3.2 Log in with your corporate SSO credentials.
+3.3 Download Cisco AnyConnect v4.10 or later.
+3.4 Run the installer as Administrator.
+3.5 Accept the license agreement and complete the installation.
+3.6 Restart your laptop after installation.
+
+4. INSTALLATION — MAC
+4.1 Navigate to software.acmecorp.internal.
+4.2 Download the AnyConnect .dmg file.
+4.3 Open the .dmg and run the installer package.
+4.4 Grant necessary permissions when prompted by macOS.
+4.5 Restart after installation.
+
+5. CONNECTING TO VPN
+5.1 Open Cisco AnyConnect from the applications menu.
+5.2 Enter the VPN server address: vpn.acmecorp.internal
+5.3 Enter your corporate SSO username and password.
+5.4 Approve the MFA push notification on your mobile authenticator app.
+5.5 Once connected, your task bar will show the AnyConnect lock icon.
+
+6. SPLIT TUNNELLING
+6.1 Only company traffic is routed through the VPN (split tunnel configuration).
+6.2 Personal internet traffic will use your local network directly.
+
+7. TROUBLESHOOTING
+7.1 "Unable to connect" — Verify your MFA app is synced. Restart AnyConnect.
+7.2 "Authentication failed" — Reset your password at password.acmecorp.internal.
+7.3 "VPN disconnects frequently" — Check your internet stability. Use 5GHz Wi-Fi.
+7.4 For further support: helpdesk@acmecorp.internal or ext. 2000.
+
+8. POLICY OWNER
+IT Infrastructure Team. Contact helpdesk@acmecorp.internal.

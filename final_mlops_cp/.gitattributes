@@ -1,0 +1,18 @@
+# .gitattributes — normalise line endings
+# All text files → LF in the repo; Git converts on checkout for Windows
+* text=auto
+
+# Explicitly LF for scripts and config
+*.py     text eol=lf
+*.yaml   text eol=lf
+*.yml    text eol=lf
+*.txt    text eol=lf
+*.md     text eol=lf
+*.json   text eol=lf
+*.sh     text eol=lf
+*.env*   text eol=lf
+
+# Binary — no conversion
+*.png    binary
+*.jpg    binary
+*.pdf    binary
